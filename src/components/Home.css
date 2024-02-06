@@ -1,0 +1,38 @@
+.img-flex {
+    display: flex;
+    justify-content: center;
+
+}
+
+.title {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.img-flex img {
+    height: auto;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+img:hover {
+    border: 3px solid red;
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 767px) {
+    .home-flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .img-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-flex img {
+        height: auto;
+        width: 350px;
+    }
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --dark_grey: #222;
+    --white: #FBFEF9;
+}
+
+
+body {
+    background-color: var(--background);
+    padding: 0;
+    margin: 0;
+}
