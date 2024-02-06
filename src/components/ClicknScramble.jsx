@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const ImageComponent = () => {
   // Array of local image paths
-  const images = ['./src/assets/ComfyUI_00049_.jpg', './src/assets/ComfyUI_00050_.jpg', './src/assets/ComfyUI_00050_.jpg', './src/assets/ComfyUI_00066_.jpg'];
+  const images = ['/src/assets/ComfyUI_00049_.jpg', '/src/assets/ComfyUI_00050_.jpg', '/src/assets/ComfyUI_00050_.jpg', '/src/assets/ComfyUI_00066_.jpg'];
 
   // State to hold the currently displayed image
   const [currentImage, setCurrentImage] = useState(images[0]);
