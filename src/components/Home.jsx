@@ -1,14 +1,14 @@
 import './Home.css'
-import ClicknScramble from './ClicknScramble'
+import ClickAndScramble from './ClickAndScramble'
 
 function Home() {
     return (
     <>
     <div className="home-flex">
       <div className="title">
-        <h1>Retire the AI mimic</h1>
+        <h2>Retire the AI mimic</h2>
       </div>
-      <ClicknScramble />
+      <ClickAndScramble />
     </div>
     </>
     )

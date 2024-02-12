@@ -18,7 +18,11 @@
 }
 
 img:hover {
-    border: 3px solid red;
+    border: 3px red solid;
+}
+
+h1 {
+    text-align: center;
 }
 
 /* Media query for mobile screens */
