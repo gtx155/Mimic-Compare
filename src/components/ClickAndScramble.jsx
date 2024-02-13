@@ -14,12 +14,11 @@ const ClickAndScramble = () => {
     '/assets/img3r.jpg',
   ];
 
-  // State to hold the currently displayed images
   const [rndFirstImg, setRndFirstImg] = useState(images[0]);
   const [rndSecondImg, setRndSecondImg] = useState(images[1]);
   const [count, setCount] = useState(0)
   
-  // Function to handle image click and set a new random image
+  // imgSrc from rndFirstImg or rndSecondImg
   const handleImageClick = (imgSrc) => {
     if (imgSrc.includes('r')) {
       setCount(prevCount => prevCount + 1)
@@ -28,11 +27,26 @@ const ClickAndScramble = () => {
 
   // Function to update images when clicked
   const updateImages = () => {
-    const rndNum1 = Math.floor(Math.random() * images.length);
-    const rndNum2 = Math.floor(Math.random() * images.length);
-    setRndFirstImg(images[rndNum1]);
-    setRndSecondImg(images[rndNum2]);
-  };
+  let rndNum1, rndNum2;
+  
+  // Loop until an img with 'r' is found
+  do {
+    rndNum1 = Math.floor(Math.random() * images.length);
+  } while (!images[rndNum1].includes('r'));
+
+  // Loop until an img with 'f' is found
+  do {
+    rndNum2 = Math.floor(Math.random() * images.length);
+  } while (!images[rndNum2].includes('f'));
+
+  if (Math.random() > 0.5) {
+    // Swap positions
+    [rndNum1, rndNum2] = [rndNum2, rndNum1];
+  }
+
+  setRndFirstImg(images[rndNum1]);
+  setRndSecondImg(images[rndNum2]);
+};
 
 return (
 <>

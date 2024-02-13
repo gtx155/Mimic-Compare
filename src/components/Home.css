@@ -12,13 +12,16 @@
 .img-flex img {
     height: auto;
     width: 600px;
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 img:hover {
-    border: 3px red solid;
+    transform: scale(1.1);
+    background-color: #2980b9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
