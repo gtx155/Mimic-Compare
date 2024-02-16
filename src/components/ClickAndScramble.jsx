@@ -50,7 +50,7 @@ const ClickAndScramble = () => {
 
 return (
 <>
-<h1>Score:{count}</h1>
+<p>Score:{count}</p>
   <div className="img-flex">
     <img src={rndFirstImg} alt="random" onClick={() => { handleImageClick(rndFirstImg); updateImages(); }} />
     <img src={rndSecondImg} alt="random" onClick={() => { handleImageClick(rndSecondImg); updateImages(); }} />

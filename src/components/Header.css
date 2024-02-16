@@ -7,14 +7,16 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1;
   font-family: 'Inter', sans-serif;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 10px;
+box-shadow:  10px 10px 20px #c5c5c5,
+             -10px -10px 20px #ffffff;
 }
 
 .logo {
-  padding: 0px 22px;
   display: flex;
   align-items: center;
+  margin: 0px 22px;
 }
 
 .logo img {
@@ -39,7 +41,7 @@
 
 @media (max-width: 768px) {
   .logo {
-    padding: 0 10px;
+    margin: 0 16px;
   }
 
   .menu-button {
@@ -92,7 +94,7 @@
     list-style: none;
     padding: 10px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;    
+    border-image: linear-gradient(to right, #bebebe, blue) 1;    
   }
 
   .menu li:first-child {
@@ -114,5 +116,5 @@
 }
 
 .desktop li a:hover {
-  color: red;
+  color: yellow;
 }

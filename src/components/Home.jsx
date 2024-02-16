@@ -5,9 +5,7 @@ function Home() {
     return (
     <>
     <div className="home-flex">
-      <div className="title">
-        <h2>Retire the AI mimic</h2>
-      </div>
+      <h2 className='title'>Retire the AI mimic</h2>
       <ClickAndScramble />
     </div>
     </>
