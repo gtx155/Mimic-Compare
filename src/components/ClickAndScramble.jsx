@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Count from './Score'
+import Score from './Score';
 
 const ClickAndScramble = () => {
   // Array of local image paths
@@ -17,7 +19,7 @@ const ClickAndScramble = () => {
   const [rndFirstImg, setRndFirstImg] = useState(images[0]);
   const [rndSecondImg, setRndSecondImg] = useState(images[1]);
   const [count, setCount] = useState(0)
-  
+
   // imgSrc from rndFirstImg or rndSecondImg
   const handleImageClick = (imgSrc) => {
     if (imgSrc.includes('r')) {
@@ -50,7 +52,7 @@ const ClickAndScramble = () => {
 
 return (
 <>
-<p>Score:{count}</p>
+<Score scoreNum={count} />
   <div className="img-flex">
     <img src={rndFirstImg} alt="random" onClick={() => { handleImageClick(rndFirstImg); updateImages(); }} />
     <img src={rndSecondImg} alt="random" onClick={() => { handleImageClick(rndSecondImg); updateImages(); }} />

@@ -13,7 +13,7 @@ export function Header() {
     <header className='mobile-header'>
       <Link href='/'>
       <div className='logo'>
-        <img src="/assets/ComfyUI_00072_.jpg" alt="" />
+        <img src="/icon.webp" alt="icon" />
         <p className='site-title'>Mimic Compare</p>
       </div>
       </Link>
