@@ -23,6 +23,7 @@
   height: 45px;
   width: 45px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .site-title {
@@ -96,7 +97,7 @@
     list-style: none;
     padding: 10px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(to right, #bebebe, #335B7B) 1;    
+    border-image: linear-gradient(to right, #bebebe, #6FBBE1) 1;    
   }
 
   .menu li:first-child {

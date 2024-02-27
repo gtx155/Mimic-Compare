@@ -11,21 +11,20 @@
 }
 
 .img-flex img {
-    height: auto;
-    width: 600px;
+    height: 450px;
+    width: auto;
     margin: 20px;
     cursor: pointer;
+    -webkit-user-drag: none;
+    user-select: none;
     border-radius: 10px;
     transition: transform 0.3s ease;
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);*/
-
-
-
 }
 
 img:hover {
     transform: scale(1.1);
-    background-color: #2980b9;
+    background-color: #6FBBE1;
 }
 
 p {

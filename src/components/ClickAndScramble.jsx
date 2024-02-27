@@ -1,23 +1,28 @@
 import { useState } from 'react';
-import Count from './Score'
 import Score from './Score';
+import CoinPopup from './CoinPopup';
 
 const ClickAndScramble = () => {
   // Array of local image paths
   const images = [
-    '/assets/img1r.jpg',
-    '/assets/img1f.jpg',
-    '/assets/img2f.jpg',
-    '/assets/img3f.jpg', 
-    '/assets/img1f.jpg',
-    '/assets/img2f.jpg',
-    '/assets/img3f.jpg',
-    '/assets/img2r.jpg', 
-    '/assets/img3r.jpg',
+    'assets/img1r.png',
+    'assets/img2r.png',
+    'assets/img3r.png',
+    'assets/img4r.png',
+    'assets/img5r.png',
+    'assets/img6r.png',
+    'assets/img7r.png',
+    'assets/imgXr.jpg',
+    'assets/imgX2r.jpg',
+    'assets/img1f.jpg',
+    'assets/img2f.jpg',
+    'assets/img3f.jpg',
+    'assets/img4f.jpg',
+    'assets/img5f.jpg'
   ];
 
   const [rndFirstImg, setRndFirstImg] = useState(images[0]);
-  const [rndSecondImg, setRndSecondImg] = useState(images[1]);
+  const [rndSecondImg, setRndSecondImg] = useState(images.slice(-1));
   const [count, setCount] = useState(0)
 
   // imgSrc from rndFirstImg or rndSecondImg
@@ -53,6 +58,7 @@ const ClickAndScramble = () => {
 return (
 <>
 <Score scoreNum={count} />
+<CoinPopup coinNum={count} />
   <div className="img-flex">
     <img src={rndFirstImg} alt="random" onClick={() => { handleImageClick(rndFirstImg); updateImages(); }} />
     <img src={rndSecondImg} alt="random" onClick={() => { handleImageClick(rndSecondImg); updateImages(); }} />
