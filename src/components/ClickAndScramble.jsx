@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Score from './Score';
-import CoinPopup from './CoinPopup';
+import CoinPopup from './ConfettiPopup';
 
 const ClickAndScramble = () => {
   // Array of local image paths
@@ -34,31 +34,37 @@ const ClickAndScramble = () => {
 
   // Function to update images when clicked
   const updateImages = () => {
-  let rndNum1, rndNum2;
-  
-  // Loop until an img with 'r' is found
-  do {
-    rndNum1 = Math.floor(Math.random() * images.length);
-  } while (!images[rndNum1].includes('r'));
 
-  // Loop until an img with 'f' is found
-  do {
-    rndNum2 = Math.floor(Math.random() * images.length);
-  } while (!images[rndNum2].includes('f'));
+    // Create an index for images containing 'r' and 'f'
+    const rIndex = [];
+    const fIndex = [];
 
-  if (Math.random() > 0.5) {
-    // Swap positions
-    [rndNum1, rndNum2] = [rndNum2, rndNum1];
-  }
+    for (let i = 0; i < images.length; i++) {
+      if (images[i].includes('r')) {
+        rIndex.push(i);
+      }
+      if (images[i].includes('f')) {
+        fIndex.push(i);
+      }
+    }
 
-  setRndFirstImg(images[rndNum1]);
-  setRndSecondImg(images[rndNum2]);
-};
+    // Randomly select from the pre-made index
+    let rndNum1 = rIndex[Math.floor(Math.random() * rIndex.length)];
+    let rndNum2 = fIndex[Math.floor(Math.random() * fIndex.length)];
+
+      if (Math.random() > 0.5) {
+        // Swap positions
+        [rndNum1, rndNum2] = [rndNum2, rndNum1];
+      }
+
+      setRndFirstImg(images[rndNum1]);
+      setRndSecondImg(images[rndNum2]);
+    };
 
 return (
 <>
 <Score scoreNum={count} />
-<CoinPopup coinNum={count} />
+<CoinPopup confettiNum={count} />
   <div className="img-flex">
     <img src={rndFirstImg} alt="random" onClick={() => { handleImageClick(rndFirstImg); updateImages(); }} />
     <img src={rndSecondImg} alt="random" onClick={() => { handleImageClick(rndSecondImg); updateImages(); }} />
