@@ -5,24 +5,31 @@ import CoinPopup from './ConfettiPopup';
 const ClickAndScramble = () => {
   // Array of local image paths
   const images = [
-    'assets/img1r.png',
-    'assets/img2r.png',
-    'assets/img3r.png',
-    'assets/img4r.png',
-    'assets/img5r.png',
-    'assets/img6r.png',
-    'assets/img7r.png',
-    'assets/imgXr.jpg',
-    'assets/imgX2r.jpg',
-    'assets/img1f.jpg',
-    'assets/img2f.jpg',
-    'assets/img3f.jpg',
-    'assets/img4f.jpg',
-    'assets/img5f.jpg'
+    'assets/pic_1f.png',
+    'assets/pic_2f.png',
+    'assets/pic_3f.png',
+    'assets/pic_4f.png',
+    'assets/pic_5f.png',
+    'assets/pic_6f.png',
+    'assets/pic_7f.png',
+    'assets/pic_8f.png',
+    'assets/pic_9f.png',
+    'assets/pic_10f.png',
+    'assets/pic_11f.png',
+    'assets/pic_12f.png',
+
+    'assets/pic_1r.jpg',
+    'assets/pic_2r.jpg',
+    'assets/pic_3r.jpg',
+    'assets/pic_4r.jpg',
+    'assets/pic_5r.jpg',
+    'assets/pic_6r.jpg',
+    'assets/pic_7r.jpg',
+    'assets/pic_8r.jpg'
   ];
 
   const [rndFirstImg, setRndFirstImg] = useState(images[0]);
-  const [rndSecondImg, setRndSecondImg] = useState(images.slice(-1));
+  const [rndSecondImg, setRndSecondImg] = useState(images[17]);
   const [count, setCount] = useState(0)
 
   // imgSrc from rndFirstImg or rndSecondImg
@@ -34,32 +41,26 @@ const ClickAndScramble = () => {
 
   // Function to update images when clicked
   const updateImages = () => {
+  let rndNum1, rndNum2;
+  
+  // Loop until an img with 'r' is found
+  do {
+    rndNum1 = Math.floor(Math.random() * images.length);
+  } while (!images[rndNum1].includes('r'));
 
-    // Create an index for images containing 'r' and 'f'
-    const rIndex = [];
-    const fIndex = [];
+  // Loop until an img with 'f' is found
+  do {
+    rndNum2 = Math.floor(Math.random() * images.length);
+  } while (!images[rndNum2].includes('f'));
 
-    for (let i = 0; i < images.length; i++) {
-      if (images[i].includes('r')) {
-        rIndex.push(i);
-      }
-      if (images[i].includes('f')) {
-        fIndex.push(i);
-      }
-    }
+  if (Math.random() > 0.5) {
+    // Swap positions
+    [rndNum1, rndNum2] = [rndNum2, rndNum1];
+  }
 
-    // Randomly select from the pre-made index
-    let rndNum1 = rIndex[Math.floor(Math.random() * rIndex.length)];
-    let rndNum2 = fIndex[Math.floor(Math.random() * fIndex.length)];
-
-      if (Math.random() > 0.5) {
-        // Swap positions
-        [rndNum1, rndNum2] = [rndNum2, rndNum1];
-      }
-
-      setRndFirstImg(images[rndNum1]);
-      setRndSecondImg(images[rndNum2]);
-    };
+  setRndFirstImg(images[rndNum1]);
+  setRndSecondImg(images[rndNum2]);
+};
 
 return (
 <>

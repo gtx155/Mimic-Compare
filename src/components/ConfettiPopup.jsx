@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const ConfettiPopup = ({ confettiNum }) => {
   //Sound effect when score is reached
   let cheer = new Audio('assets/Confetti_Sound.m4a');
-  cheer.volume = 1;
+  cheer.volume = 0.75;
 
   useEffect(() => {
     // Use a switch statement to determine whether to show the confetti
@@ -13,6 +13,7 @@ const ConfettiPopup = ({ confettiNum }) => {
       case 30:
         confetti({
           particleCount: 100,
+          scalar: 1.2, 
           spread: 70,
           origin: { y: 0.6 }});
 
