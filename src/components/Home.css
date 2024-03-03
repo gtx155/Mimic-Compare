@@ -11,7 +11,7 @@
 }
 
 .img-flex img {
-    height: 450px;
+    height: 455px;
     width: auto;
     margin: 20px;
     cursor: pointer;
@@ -45,6 +45,6 @@ p {
     }
     .img-flex img {
         height: auto;
-        width: 325px;
+        width: 340px;
     }
 }

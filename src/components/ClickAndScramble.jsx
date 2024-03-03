@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Score from './Score';
-import CoinPopup from './ConfettiPopup';
+import ConfettiPopup from './ConfettiPopup';
 
 const ClickAndScramble = () => {
   // Array of local image paths
@@ -17,6 +17,9 @@ const ClickAndScramble = () => {
     'assets/pic_10f.png',
     'assets/pic_11f.png',
     'assets/pic_12f.png',
+    'assets/pic_13f.png',
+    'assets/pic_14f.png',
+    'assets/pic_15f.png',
 
     'assets/pic_1r.jpg',
     'assets/pic_2r.jpg',
@@ -25,17 +28,28 @@ const ClickAndScramble = () => {
     'assets/pic_5r.jpg',
     'assets/pic_6r.jpg',
     'assets/pic_7r.jpg',
-    'assets/pic_8r.jpg'
+    'assets/pic_8r.jpg',
+    'assets/pic_9r.jpg',
+    'assets/pic_10r.jpg',
+    'assets/pic_11r.jpg',
+    'assets/pic_12r.jpg',
+    'assets/pic_13r.jpg',
+    'assets/pic_14r.jpg',
+    'assets/pic_15r.jpg',
   ];
 
-  const [rndFirstImg, setRndFirstImg] = useState(images[0]);
-  const [rndSecondImg, setRndSecondImg] = useState(images[17]);
+  const [rndFirstImg, setRndFirstImg] = useState(images[1]);
+  const [rndSecondImg, setRndSecondImg] = useState(images[25]);
+
   const [count, setCount] = useState(0)
+  const [strike, setStrike] = useState(0)
 
   // imgSrc from rndFirstImg or rndSecondImg
   const handleImageClick = (imgSrc) => {
     if (imgSrc.includes('r')) {
       setCount(prevCount => prevCount + 1)
+    } else {
+      setStrike(prevCount => prevCount + 1)
     }
   };
 
@@ -64,8 +78,8 @@ const ClickAndScramble = () => {
 
 return (
 <>
-<Score scoreNum={count} />
-<CoinPopup confettiNum={count} />
+<Score scoreNum={count} strikeNum={strike} />
+<ConfettiPopup confettiNum={count} />
   <div className="img-flex">
     <img src={rndFirstImg} alt="random" onClick={() => { handleImageClick(rndFirstImg); updateImages(); }} />
     <img src={rndSecondImg} alt="random" onClick={() => { handleImageClick(rndSecondImg); updateImages(); }} />
