@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Score from './Score';
 import ConfettiPopup from './ConfettiPopup';
+import Gameover from './Gameover'
 
 const ClickAndScramble = () => {
   // Array of local image paths
@@ -78,6 +79,7 @@ const ClickAndScramble = () => {
 
 return (
 <>
+<Gameover scoreNum={count} strikeNum={strike} />
 <Score scoreNum={count} strikeNum={strike} />
 <ConfettiPopup confettiNum={count} />
   <div className="img-flex">
