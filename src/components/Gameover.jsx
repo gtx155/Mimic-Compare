@@ -18,8 +18,8 @@ function Gameover(props) {
         <>
             {endGame && 
             <dialog open={true}>
-                <p>GAME OVER!</p>
-                <p>Score:{props.scoreNum}</p>
+                <h1>GAME OVER!</h1>
+                <h1 className='score'>Score:{props.scoreNum}</h1>
                 <button onClick={playAgain}>PLAY AGAIN?</button>
             </dialog>}
         </>

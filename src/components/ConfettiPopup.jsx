@@ -11,6 +11,7 @@ const ConfettiPopup = ({ confettiNum }) => {
       case 10:
       case 20:
       case 30:
+      case 50:
         confetti({
           particleCount: 100,
           scalar: 1.2, 
