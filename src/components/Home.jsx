@@ -5,7 +5,7 @@ function Home() {
     return (
     <>
     <div className="home-flex">
-      <h2 className='title'>Retire the Mimic</h2>
+      <h2 className='title'>Guess the real deal?!</h2>
       <ClickAndScramble />
     </div>
     </>
