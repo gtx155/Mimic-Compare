@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link,  } from "wouter";
+import { Link, Route, Switch } from "wouter";
 import "../components/Header.css"
 
 export function Header() {
@@ -23,16 +23,23 @@ export function Header() {
         <div className='bar'></div>
       </button>
       <nav className={`menu ${isOpen ? 'open' : 'desktop'}`}>
+        <h1>Mimic Compare</h1>
         <ul>
+        <Link href='/About'>
           <li>
-            <Link href='/About'>About</Link>
+            About
           </li>
+        </Link>
+        <Link href='/Rules'>
           <li>
-            <Link href='/FAQ'>FAQ</Link>
+            How to play?
           </li>
+        </Link>
+        <Link href='/'>
           <li>
-            <Link href='/'>Home</Link>
+            Home
           </li>
+        </Link>
         </ul>
       </nav>
     </header>

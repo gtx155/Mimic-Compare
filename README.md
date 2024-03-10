@@ -1,8 +1,7 @@
-# React + Vite
+# Mimic Compare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Site: [mimic-compare.netlify.app/](mimic-compare.netlify.app/)
+![Mimic Compare Screenshot](preview.webp)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**This is a fun minigame website where you get to "retire" some AI images by guessing the real image. It's made using React and Vite.**
+The AI images were made using Stable Diffusion XL Lightning

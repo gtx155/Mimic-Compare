@@ -73,11 +73,6 @@
 
   }
 
-  .menu a {
-    color: var(--white);
-    text-decoration: none;
-  }
-
   .menu.open {
     left: 0;
   }
@@ -104,7 +99,19 @@
     /*border-bottom: 2px solid;
     border-image: linear-gradient(to right, #bebebe, #6FBBE1) 1;*/
     border-radius: 10px;
-    border: red solid 4px;   
+    border: var(--white) solid 3px;
+    color: var(--white);   
+    margin: 3px 15px;
+  }
+
+  .menu li:hover {
+    background-color: #6FBBE1;
+  }
+
+  .menu h1 {
+    font-size: 50px;
+    color: white;
+    margin: 5px 15px;
   }
 }
 
@@ -115,12 +122,17 @@
 
 }
 
-.desktop li a {
+.desktop li {
   text-decoration: none;
   color: var(--white);
   padding: 1.4rem;
+  cursor: pointer;
 }
 
-.desktop li a:hover {
+.desktop li:hover {
   color: #6FBBE1;
+}
+
+.desktop h1 {
+  display: none;
 }
