@@ -1,10 +1,10 @@
 function Rules() {
     return (
     <>
-    <h1>Rules</h1>
-    <ul>
-        <li>For every correct guess you get 1 point.</li>
-        <li>For every wrong guess a strike (✘) gets added, at three strikes the game ends.</li>
+    <h1 className='title'>Rules</h1>
+    <ul className='title' style={{listStyleType: 'none'}}>
+        <li style={{margin:'8px'}}>For every correct guess you get 1 point.</li>
+        <li style={{margin:'8px'}}>For every wrong guess a strike (✘) gets added, at three strikes the game ends.</li>
     </ul>
     </>
     )
